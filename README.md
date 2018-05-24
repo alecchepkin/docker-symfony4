@@ -1,6 +1,26 @@
 Docker environment for a Symfony4 project
 ==================================
 
+# .env
+DATABASE_URL=mysql://dbuser:dbpw@mysql:3306/docker_symfony4
+
+Finally, let’s restart the containers
+docker-compose down
+docker-compose up -d
+docker-compose exec php-fpm bash
+Now inside the bash, you should be able to
+
+#inside php-fpm bash
+bin/console doc:sch:crea
+
+For DB Client
+Host: 0.0.0.0
+Username: dbuser
+Password: dbpw
+Port: 8002
+
+
+
 # Add to your project
 
 Move the `docker-compose.yml` and the folder named `phpdocker` containing nginx and php-fpm config for it to the root of your Symfony4 project.
